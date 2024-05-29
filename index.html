@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta Personalizada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+        .form-container {
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+        .submit-btn {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+        .carta img {
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <label for="nombre">Ingresa tu nombre:</label>
+            <input type="text" id="nombre" required>
+            <button onclick="generarCarta()" class="submit-btn">Generar Carta</button>
+        </div>
+        <div id="carta" style="display: none;">
+            <h1>Querido <span id="nombreMostrado"></span>,</h1>
+            <p>
+                Espero que este mensaje te encuentre bien. Quería tomar un momento para agradecerte por todo lo que has hecho. Tu apoyo y dedicación no pasan desapercibidos, y estoy increíblemente agradecido por tenerte en mi vida.
+            </p>
+            <p>
+                A veces, las palabras no son suficientes para expresar toda la gratitud y el aprecio que siento, pero espero que esta carta te dé una pequeña idea de cuánto significas para mí.
+            </p>
+            <p>
+                Con cariño,<br>
+                [Ethan]
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function generarCarta() {
+            var nombre = document.getElementById("nombre").value;
+            if (nombre) {
+                document.getElementById("nombreMostrado").innerText = nombre;
+                document.getElementById("carta").style.display = "block";
+            } else {
+                alert("Por favor, ingresa tu nombre.");
+            }
+        }
+    </script>
+</body>
+</html>
